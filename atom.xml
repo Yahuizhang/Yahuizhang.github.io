@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-08T03:12:30.606Z</updated>
+  <updated>2018-05-09T09:57:41.798Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/05/08/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <id>http://yoursite.com/2018/05/08/前端性能优化/</id>
+    <published>2018-05-08T07:44:47.165Z</published>
+    <updated>2018-05-09T09:57:41.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h1><p>精髓：小</p><ol><li>html  css js 压缩变小=》减少网络请求</li><li>合并 把a.css和b.css 合并为ab.css 合并后文件体积在28.5k左右</li><li>如果css文件在同样的域名下一般不能超过5个，因为每个域下会有并发的限制，<br>把文件转移到cdn,cdn专门做静态资源分发，多个cdn共享,控制你的域名，预加载cdn,例如<code>&lt;link rel=&quot;dns-prefetch&quot; href=&quot;http://s1.bdstatic.com/&quot;&gt;</code><br>md5 aaa.sdfdf.js -&gt;版本控制 -&gt;缓存文件</li><li><p>缓存  http强缓存 html5离线缓存<br>网站需要a.js 但是a.js被打包成了-&gt; a.xxxx.js<br>a.xxxx.js -&gt;console.localStorage(12312)<br>websql  50m -&gt;(html,css,js)indexedDB</p></li><li><p>动架构<br>以vue为例index.html-&gt;vue-router-comments-&gt;生命周期 渲染htnl-&gt;异步js</p></li></ol><p>“直出”  -&gt;php,node-&gt;渲染页面跳转<a></a>———–&gt;|bigpipe(bigpipe不是全部输出，它输出主要部分，一块一块的输出,chunk输出)+ajax</p><p>加载一个spa.js -&gt;代理所有的a链接 -&gt;<br>从/a/b 跳到/c/d，可以用pushstate,只改变url(路由)，页面不刷新  ajax-&gt;{html,css,js}</p><p>在/a/b中判断是否刷新，若刷新则吐出一个json对象，否则render(‘a.html’)</p><ol start="6"><li>页面性能（重绘）<br>重绘不一定引起重排，重排一定会引起重绘<br>1-1获取dom元素，分割多个层<br>1-2对每个层节点计算样式的结果   Recalculate Style<br>1-3对每个节点生成图形和位置  重排 （有的称为回流）Layout<br>1-4将每个节点绘制填充到图层位图中 重绘 Paint<br>1-5图层作为纹理上传到gpu<br>1-6把符合的图层编程到页面生成最终的图像  合成层 composite layers</li></ol><p>总结三个阶段  layout  paint Composite layers</p><p>浏览器中的application中所有的选项</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前端性能优化&quot;&gt;&lt;a href=&quot;#前端性能优化&quot; class=&quot;headerlink&quot; title=&quot;前端性能优化&quot;&gt;&lt;/a&gt;前端性能优化&lt;/h1&gt;&lt;p&gt;精髓：小&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;html  css js 压缩变小=》减少网络请求&lt;/li&gt;
+&lt;li&gt;合
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2018/04/27/webpack%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2018/04/27/webpack介绍/</id>
+    <published>2018-04-27T01:46:17.967Z</published>
+    <updated>2018-04-27T01:47:01.178Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="webpack介绍"><a href="#webpack介绍" class="headerlink" title="webpack介绍"></a>webpack介绍</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;webpack介绍&quot;&gt;&lt;a href=&quot;#webpack介绍&quot; class=&quot;headerlink&quot; title=&quot;webpack介绍&quot;&gt;&lt;/a&gt;webpack介绍&lt;/h1&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
