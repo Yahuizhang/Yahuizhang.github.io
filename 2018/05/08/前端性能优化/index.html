@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="zhangyahui">
 <meta property="og:description" content="前端性能优化精髓：小  html  css js 压缩变小=》减少网络请求 合并 把a.css和b.css 合并为ab.css 合并后文件体积在28.5k左右 如果css文件在同样的域名下一般不能超过5个，因为每个域下会有并发的限制，把文件转移到cdn,cdn专门做静态资源分发，多个cdn共享,控制你的域名，预加载cdn,例如&amp;lt;link rel=&amp;quot;dns-prefetch&amp;quot">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-09T09:57:41.798Z">
+<meta property="og:updated_time" content="2018-05-16T10:08:26.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zhangyahui">
 <meta name="twitter:description" content="前端性能优化精髓：小  html  css js 压缩变小=》减少网络请求 合并 把a.css和b.css 合并为ab.css 合并后文件体积在28.5k左右 如果css文件在同样的域名下一般不能超过5个，因为每个域下会有并发的限制，把文件转移到cdn,cdn专门做静态资源分发，多个cdn共享,控制你的域名，预加载cdn,例如&amp;lt;link rel=&amp;quot;dns-prefetch&amp;quot">
@@ -341,6 +341,18 @@
 </ol>
 <p>总结三个阶段  layout  paint Composite layers</p>
 <p>浏览器中的application中所有的选项</p>
+<p>性能优化黑科技  Google AMP<br>再做性能优化之前，首先要考虑优化的目的，限制，等等<br>目的：<br>1.提升用户体验<br>2.提升执行效率<br>3.减轻服务器压力</p>
+<p>限制：<br>1.安全性<br>2.一致性<br>3.可维护性（众所周知，c语言是性能最好的，但是难以维护与开发）<br>4.成本（提出的优化方案的投入与产出是否值得，从人力，资金等各个方面考虑）</p>
+<p>在做优化的时候也要考虑业务特性：读写频率，数据模型，用户特点等等方面</p>
+<p>前端性能优化场景（web场景下的浏览器何http层性能优化）<br>在这个场景下的一般性特点：<br>1.js执行效率。js不要执行过长的循环<br>2.渲染引擎效率。主要是重绘和重排，<br>3.http请求。手机端对http请求是有限制的，不同手机限制不相同，</p>
+<p>pc端：<br>1.浏览器性能差异<br>2.网速相对快<br>3.处理器性能较好</p>
+<p>移动端：<br>1.处理器有限<br>2.网络速度慢<br>3.流量成本</p>
+<p> Google AMP（针对手机端资讯类页面的优化，非spa）<br>场景的特点：<br>1.机器性能<br>2.浏览器性能<br>3.网速受限<br>4.非刚性需求</p>
+<p>有以上的特点我们要做以下权衡：<br>1.减少请求<br>2.减少体积<br>3.牺牲一部分ue甚至开发效率来换取必须性能</p>
+<p>AMP是什么样子呢？<br>apm标准</p>
+<p>amp-img:<br>图片占用http请求<br>图片大小未知，会触发reflow，所以强制要求图片必须在渲染前指定大小<br>类似的还有amp-video,amp-iframe,amp-audio</p>
+<p>针对css<br>1.所有的css必须inline。外部引入会引发额外请求，外部css会影响内部dom,触发reflow和repaint<br>2.必须在head。同样会触发reflow和repaint<br>3.只能有一个。尽量合并只有一个<br>4.禁止inline style。不可控，可能会触发reflow和repaint<br>5.禁止！important。它对于代码会失控<br>6.禁止*seletor<br>7.禁止filter。因为它依赖显卡，若显卡支持不好，效果会很差，尤其是移动端，基本没有独立显卡</p>
+<p>为什么按以上的做：<br>1.不发额外请求，减少请求次数<br>2.body渲染前所有样式都已经定义完<br>3.避免多次rerender</p>
 
       
     </div>
@@ -454,7 +466,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

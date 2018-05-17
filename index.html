@@ -253,6 +253,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/雅虎军规/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhangyahui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhangyahui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/14/雅虎军规/" itemprop="url">雅虎军规</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-14T11:54:45+08:00">
+                2018-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="雅虎军规"><a href="#雅虎军规" class="headerlink" title="雅虎军规"></a>雅虎军规</h2><p>书籍推荐 雅虎and图灵出版 （畜生系列）</p>
+<p>友链<a href="https://blog.csdn.net/camel20/article/details/7283893" target="_blank" rel="noopener">https://blog.csdn.net/camel20/article/details/7283893</a></p>
+<h2 id="前端开发高级调试"><a href="#前端开发高级调试" class="headerlink" title="前端开发高级调试"></a>前端开发高级调试</h2><ul>
+<li><p>断点以及捕获事件绑定</p>
+<p>  断点</p>
+<p>  寻找事件监听</p>
+<p>  dom元素断点</p>
+</li>
+<li>audis和chrome性能插件<br>  1.audits<br>2.performanceTracer<br>3.page speed<br>4.performance.timing</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/hexo教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -461,6 +590,18 @@
 </ol>
 <p>总结三个阶段  layout  paint Composite layers</p>
 <p>浏览器中的application中所有的选项</p>
+<p>性能优化黑科技  Google AMP<br>再做性能优化之前，首先要考虑优化的目的，限制，等等<br>目的：<br>1.提升用户体验<br>2.提升执行效率<br>3.减轻服务器压力</p>
+<p>限制：<br>1.安全性<br>2.一致性<br>3.可维护性（众所周知，c语言是性能最好的，但是难以维护与开发）<br>4.成本（提出的优化方案的投入与产出是否值得，从人力，资金等各个方面考虑）</p>
+<p>在做优化的时候也要考虑业务特性：读写频率，数据模型，用户特点等等方面</p>
+<p>前端性能优化场景（web场景下的浏览器何http层性能优化）<br>在这个场景下的一般性特点：<br>1.js执行效率。js不要执行过长的循环<br>2.渲染引擎效率。主要是重绘和重排，<br>3.http请求。手机端对http请求是有限制的，不同手机限制不相同，</p>
+<p>pc端：<br>1.浏览器性能差异<br>2.网速相对快<br>3.处理器性能较好</p>
+<p>移动端：<br>1.处理器有限<br>2.网络速度慢<br>3.流量成本</p>
+<p> Google AMP（针对手机端资讯类页面的优化，非spa）<br>场景的特点：<br>1.机器性能<br>2.浏览器性能<br>3.网速受限<br>4.非刚性需求</p>
+<p>有以上的特点我们要做以下权衡：<br>1.减少请求<br>2.减少体积<br>3.牺牲一部分ue甚至开发效率来换取必须性能</p>
+<p>AMP是什么样子呢？<br>apm标准</p>
+<p>amp-img:<br>图片占用http请求<br>图片大小未知，会触发reflow，所以强制要求图片必须在渲染前指定大小<br>类似的还有amp-video,amp-iframe,amp-audio</p>
+<p>针对css<br>1.所有的css必须inline。外部引入会引发额外请求，外部css会影响内部dom,触发reflow和repaint<br>2.必须在head。同样会触发reflow和repaint<br>3.只能有一个。尽量合并只有一个<br>4.禁止inline style。不可控，可能会触发reflow和repaint<br>5.禁止！important。它对于代码会失控<br>6.禁止*seletor<br>7.禁止filter。因为它依赖显卡，若显卡支持不好，效果会很差，尤其是移动端，基本没有独立显卡</p>
+<p>为什么按以上的做：<br>1.不发额外请求，减少请求次数<br>2.body渲染前所有样式都已经定义完<br>3.避免多次rerender</p>
 
           
         
@@ -789,7 +930,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
